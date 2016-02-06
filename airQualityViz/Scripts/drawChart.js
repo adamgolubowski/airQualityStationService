@@ -11,11 +11,13 @@ d3.json(dataUrl, function (d) {
     data = d;
     //If there is data then build graph
     if (data.length > 0) {
+        d3.select("#readingsPlots").select('#loadingNote').text("");
         drawLoop();
     }
 });
 
 function drawLoop() {
+
     // noprotect
     for (i = 0; i < data[0].equipment.length; i++) {
         var station = data[0].Name;
@@ -83,8 +85,7 @@ function plotReadings(measureType, sensorModel, equipmentID, data, color) {
               return d.Value;
           })])
           .range([height, 0]);
-
-
+  
         var xAxis = d3.svg.axis()
           .scale(xScale)
           .orient('bottom')
@@ -148,8 +149,8 @@ function plotReadings(measureType, sensorModel, equipmentID, data, color) {
                 .select("#value")
                 .text(d.Value);
               d3.select("#tooltip")
-                  .select("#date")
-                .text(d.TimeStamp);
+                 .select("#date")
+                .text(moment(d.TimeStamp).format("YYYY-MM-DD HH:mm"));
               d3.select("#tooltip")
                   .select("#readingType")
                   .text(type);
@@ -159,5 +160,7 @@ function plotReadings(measureType, sensorModel, equipmentID, data, color) {
         .on("mouseout", function () {
             d3.select("#tooltip").classed("hidden", true);
         });
+
+        
     }
 }

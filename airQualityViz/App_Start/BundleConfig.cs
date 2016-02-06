@@ -30,9 +30,9 @@ namespace airQualityViz
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
-
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/map.css",
                       "~/Content/site.css",
                       "~/Content/readingPlot.css",
                       "~/Content/leaflet.css"));
@@ -40,24 +40,9 @@ namespace airQualityViz
             bundles.Add(new ScriptBundle("~/bundles/leaflet").Include(
              "~/Scripts/leaflet*"));
 
-
-
             bundles.Add(new ScriptBundle("~/bundles/moment").Include(
              "~/Scripts/moment.js"));
 
-            //bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
-            //            "~/Content/themes/base/jquery.ui.core.css",
-            //            "~/Content/themes/base/jquery.ui.resizable.css",
-            //            "~/Content/themes/base/jquery.ui.selectable.css",
-            //            "~/Content/themes/base/jquery.ui.accordion.css",
-            //            "~/Content/themes/base/jquery.ui.autocomplete.css",
-            //            "~/Content/themes/base/jquery.ui.button.css",
-            //            "~/Content/themes/base/jquery.ui.dialog.css",
-            //            "~/Content/themes/base/jquery.ui.slider.css",
-            //            "~/Content/themes/base/jquery.ui.tabs.css",
-            //            "~/Content/themes/base/jquery.ui.datepicker.css",
-            //            "~/Content/themes/base/jquery.ui.progressbar.css",
-            //            "~/Content/themes/base/jquery.ui.theme.css"));
         }
     }
 }

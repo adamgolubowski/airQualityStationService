@@ -15,8 +15,11 @@
     <div class="container">
         <div class="navbar navbar-default navbar-inverse">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"></button>
-                @Html.ActionLink("Air quality", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @*<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"></button>*@
+                <p class="navbar-text">Air Quality</p>
+                <p class="navbar-text navbar-right"><span id="stationNameDisplayed"></span></p>
+                @*<a class="navbar-brand">Air Quality <span id="stationNameDisplayed"></span></a>*@
+                @*@Html.ActionLink("Air quality", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
             </div>
         </div>
     </div>
