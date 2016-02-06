@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="map" style="height:300px">
+        <script src="~/Scripts/map.js"></script>
+</div>
+<div id="tooltip" class="hidden">
+    <p>Reading date: <span id="date">100</span></p>
+    <p><span id="readingType">reading</span> level: <span id="value">100</span></p>
+</div>
+<div id="readingsPlots" class="container"></div>
+<script src="~/Scripts/drawChart.js"></script>
+ 
