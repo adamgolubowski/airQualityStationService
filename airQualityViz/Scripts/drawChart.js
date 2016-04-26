@@ -7,8 +7,16 @@ console.log(dataUrl);
 
 var colors = ['#377eb8', '#4daf4a', '#1b9e77', '#d95f02', '#7570b3', '#e41a1c'];
 
+// to compare dates
+function comp(a, b) {
+    return new Date(a.TimeStamp).getTime() - new Date(b.TimeStamp).getTime();
+}
+
+//console.log(dataset);
+
 d3.json(dataUrl, function (d) {
     data = d;
+    data.sort(comp); // sort by dates, becasue webservice may not return records in order
     //If there is data then build graph
     if (data.length > 0) {
         d3.select("#readingsPlots").select('#loadingNote').text("");
