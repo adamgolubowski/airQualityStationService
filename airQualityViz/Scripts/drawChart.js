@@ -16,7 +16,6 @@ function comp(a, b) {
 
 d3.json(dataUrl, function (d) {
     data = d;
-    data.sort(comp); // sort by dates, becasue webservice may not return records in order
     //If there is data then build graph
     if (data.length > 0) {
         d3.select("#readingsPlots").select('#loadingNote').text("");
@@ -32,6 +31,7 @@ function drawLoop() {
         var id = data[0].equipment[i].ID;
         var sensor = data[0].equipment[i].sensor.Model;
         var readings = data[0].equipment[i].datapoint;
+		readings.sort(comp); // sort by dates
         var type = data[0].equipment[i].sensor.measure.Type;
 
         plotReadings(type, sensor, id, readings, colors[i]);
@@ -93,7 +93,7 @@ function plotReadings(measureType, sensorModel, equipmentID, data, color) {
               return d.Value;
           })])
           .range([height, 0]);
-  
+
         var xAxis = d3.svg.axis()
           .scale(xScale)
           .orient('bottom')
@@ -169,6 +169,6 @@ function plotReadings(measureType, sensorModel, equipmentID, data, color) {
             d3.select("#tooltip").classed("hidden", true);
         });
 
-        
+
     }
 }
